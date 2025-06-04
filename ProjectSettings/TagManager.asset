@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  - Trap
+  - Tree
+  - Bullet
+  - Diamond
+  - Enemy
+  - AirTrap
+  - Box
+  - Coin
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - Tree
+  - Player
+  - BackGround
+  - SeeShell
+  - Bullet
+  - TotemsHead2
+  - TotemsHead3
+  - TotemsHead1
+  - BlueDiamond
+  - Crabby
+  - Air
+  - PinkStart
+  - Box
+  - FieceTooth
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1703548597
+    locked: 0
+  - name: Back Tree
+    uniqueID: 2794810947
+    locked: 0
+  - name: Platform
+    uniqueID: 3045583755
+    locked: 0
+  - name: Tree
+    uniqueID: 3740247547
+    locked: 0
+  - name: Collector
+    uniqueID: 2511154251
+    locked: 0
+  - name: Trap
+    uniqueID: 3518795871
+    locked: 0
+  - name: Enemy
+    uniqueID: 2371214003
+    locked: 0
+  - name: UI
+    uniqueID: 187944333
+    locked: 0
+  - name: Player
+    uniqueID: 1474785847
+    locked: 0
