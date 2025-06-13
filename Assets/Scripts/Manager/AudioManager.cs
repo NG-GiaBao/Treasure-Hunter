@@ -32,10 +32,6 @@ public class AudioManager : MonoBehaviour
 
         MenuGameMusic();
     }
-    private void Update()
-    {
-        
-    }
     public void PlaySoundEffect(AudioClip audioClip)
     {
         EffectAudioSource.PlayOneShot(audioClip);

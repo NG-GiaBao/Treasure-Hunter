@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class HandlerManager : MonoBehaviour
 {
     [Header("Link Ui")]
     public BoardGameOver boardGameOver;
@@ -53,7 +53,7 @@ public class UIManager : MonoBehaviour
 
     public bool m_IsWin;
 
-    public static UIManager Instance;
+    public static HandlerManager Instance;
 
     private void Awake()
     {

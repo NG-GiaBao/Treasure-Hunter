@@ -16,7 +16,7 @@ public class BoardGameOver : MonoBehaviour
         Time.timeScale = 1f;
         GameManager.instance.m_IsPlayerDeath = false;
         this.gameObject.SetActive(false);
-        UIManager.Instance.RestartGameState();
+        HandlerManager.Instance.RestartGameState();
         if (GameManager.instance.gameMap == GameMap.Lv1) AudioManager.instance.PlayGameMusic();
         else if(GameManager.instance.gameMap == GameMap.Lv2) AudioManager.instance.NextGameMusic();
         GameManager.instance.m_IsBossActive = false;
@@ -26,12 +26,12 @@ public class BoardGameOver : MonoBehaviour
     {
         
         GameManager.instance.gameState = GameState.None;
-        UIManager.Instance.LoadSceneTransition(menuNameScene, LoadMenuTransitionSettings, timeDelay);
+        HandlerManager.Instance.LoadSceneTransition(menuNameScene, LoadMenuTransitionSettings, timeDelay);
         this.gameObject.SetActive(false);
-        UIManager.Instance.BackToMenuOpening();
+        HandlerManager.Instance.BackToMenuOpening();
         AudioManager.instance.MenuGameMusic();
-        UIManager.Instance.m_MissionTilte.gameObject.SetActive(false );
-        UIManager.Instance.m_GoldCoint.SetActive(false );
+        HandlerManager.Instance.m_MissionTilte.gameObject.SetActive(false );
+        HandlerManager.Instance.m_GoldCoint.SetActive(false );
     }
     private IEnumerator DelayBossActivation()
     {

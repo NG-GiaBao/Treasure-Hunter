@@ -22,12 +22,12 @@ public class PausePanel : MonoBehaviour
     {
         GameManager.instance.gameState = GameState.None;
         Time.timeScale = 1.0f;
-        UIManager.Instance.LoadSceneTransition(menuNameScene, LoadMenuTransitionSettings, timeDelay);
+        HandlerManager.Instance.LoadSceneTransition(menuNameScene, LoadMenuTransitionSettings, timeDelay);
         this.gameObject.SetActive(false);
-        UIManager.Instance.BackToMenuOpening();
+        HandlerManager.Instance.BackToMenuOpening();
         AudioManager.instance.MenuGameMusic();
-        UIManager.Instance.m_GoldCoint.gameObject.SetActive(false);
-        UIManager.Instance.m_MissionTilte.gameObject.SetActive(false);
+        HandlerManager.Instance.m_GoldCoint.gameObject.SetActive(false);
+        HandlerManager.Instance.m_MissionTilte.gameObject.SetActive(false);
 
     }
     public void ResumeOnClick()

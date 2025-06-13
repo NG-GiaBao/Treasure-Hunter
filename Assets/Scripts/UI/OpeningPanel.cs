@@ -13,7 +13,7 @@ public class OpeningPanel : MonoBehaviour
     [SerializeField] private float timeDelay;
     public void StartButton()
     {
-        UIManager.Instance.LoadSceneTransition(gamePlayScene, gamePlaySceneTransitionSettings, timeDelay);
+        HandlerManager.Instance.LoadSceneTransition(gamePlayScene, gamePlaySceneTransitionSettings, timeDelay);
         GameManager.instance.RunGame();
         GameManager.instance.StartMap();
         AudioManager.instance.PlayGameMusic();
