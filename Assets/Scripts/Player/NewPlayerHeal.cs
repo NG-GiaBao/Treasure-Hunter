@@ -13,7 +13,11 @@ public class NewPlayerHeal : MonoBehaviour
 
     private void Start()
     {
-        m_PlayerHeal = NewPlayerManager.instance.m_PlayerStatSO.PlayerHealth;
+        m_PlayerHeal = NewPlayerManager.Instance.m_PlayerStatSO.PlayerHealth;
+        if(ListenerManager.HasInstance)
+        {
+            ListenerManager.Instance.BroadCast(ListenType.OnSendPlayerHeal, m_PlayerHeal);
+        }
     }
     
     public void CheckPlayerHeal()
@@ -39,9 +43,9 @@ public class NewPlayerHeal : MonoBehaviour
                 m_PlayerHeal--;
                 CheckPlayerHeal();
 
-                NewPlayerManager.instance.m_BloodVFx.ActiveBloodVFX(m_SpawnPosEffectBlood);
-                NewPlayerManager.instance.m_NewPlayerAnimation.GetAnimator().SetTrigger("IsHit");
-                NewPlayerManager.instance.m_NewPlayerSoundFX.ActiveSoundFxHitByPlayer();
+                NewPlayerManager.Instance.m_BloodVFx.ActiveBloodVFX(m_SpawnPosEffectBlood);
+                NewPlayerManager.Instance.m_NewPlayerAnimation.GetAnimator().SetTrigger("IsHit");
+                NewPlayerManager.Instance.m_NewPlayerSoundFX.ActiveSoundFxHitByPlayer();
             }
         }    
     }
@@ -51,7 +55,7 @@ public class NewPlayerHeal : MonoBehaviour
     }
     public int ResetPlayerHeal()
     {
-        m_PlayerHeal = NewPlayerManager.instance.m_PlayerStatSO.PlayerHealth;
+        m_PlayerHeal = NewPlayerManager.Instance.m_PlayerStatSO.PlayerHealth;
         return m_PlayerHeal;
     }
     public int UpdatePlayerHeal()

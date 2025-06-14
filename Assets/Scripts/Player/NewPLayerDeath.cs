@@ -8,29 +8,29 @@ public class NewPLayerDeath : MonoBehaviour
 
     private void Start()
     {
-        NewPlayerManager.instance.m_NewPlayerHeal.OnSendStatePlayerDeath += ForceCheckDeath;
+        NewPlayerManager.Instance.m_NewPlayerHeal.OnSendStatePlayerDeath += ForceCheckDeath;
     }
     private void OnDestroy()
     {
-        NewPlayerManager.instance.m_NewPlayerHeal.OnSendStatePlayerDeath -= ForceCheckDeath;
+        NewPlayerManager.Instance.m_NewPlayerHeal.OnSendStatePlayerDeath -= ForceCheckDeath;
     }
 
     public void ForceCheckDeath(bool isPlayerDeath)
     {
         if(isPlayerDeath)
         {
-            NewPlayerManager.instance.m_NewPlayerAnimation.GetAnimator().SetTrigger("IsDeath");
+            NewPlayerManager.Instance.m_NewPlayerAnimation.GetAnimator().SetTrigger("IsDeath");
         
             //StartCoroutine(DelayShowGameOver());
             if (transform.localScale.x < 0)
             {
                 Debug.Log("aa");
-                NewPlayerManager.instance.m_NewPlayerMove.m_PlayerRb.velocity = new(-m_DeathForce.x, m_DeathForce.y);
+                NewPlayerManager.Instance.m_NewPlayerMove.m_PlayerRb.velocity = new(-m_DeathForce.x, m_DeathForce.y);
             }
             else
             {
                 Debug.Log("cc");
-                NewPlayerManager.instance.m_NewPlayerMove.m_PlayerRb.velocity = new(m_DeathForce.x, m_DeathForce.y);
+                NewPlayerManager.Instance.m_NewPlayerMove.m_PlayerRb.velocity = new(m_DeathForce.x, m_DeathForce.y);
             }
         }
        

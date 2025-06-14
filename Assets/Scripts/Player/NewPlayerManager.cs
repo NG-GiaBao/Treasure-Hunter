@@ -2,9 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewPlayerManager : MonoBehaviour
+public enum PlayerState
 {
-    public static NewPlayerManager instance;
+    Idle,
+    Moving,
+    Jumping,
+    Falling,
+    Attacking,
+    Dead
+}
+public class NewPlayerManager : BaseManager<NewPlayerManager>
+{
 
     [Header("Reference Functions")]
     public NewPlayerMove m_NewPlayerMove;
@@ -22,17 +30,9 @@ public class NewPlayerManager : MonoBehaviour
     [Header("Stat Player")]
     public PlayerStatSO m_PlayerStatSO;
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
+        base.Awake();
         m_NewPlayerMove = GetComponent<NewPlayerMove>();
         m_NewPlayerAnimation = GetComponent<NewPlayerAnimation>();
         m_NewPlayerJump = GetComponent<NewPlayerJump>();
@@ -55,18 +55,8 @@ public class NewPlayerManager : MonoBehaviour
         m_NewPlayerJump.PlayerJump();
         m_NewPlayerJump.HandleLandingSound();
     }
-
-   
 }
 
 
 
-public enum PlayerState
-{
-    Idle,
-    Moving,
-    Jumping,
-    Falling,
-    Attacking,
-    Dead
-}
+

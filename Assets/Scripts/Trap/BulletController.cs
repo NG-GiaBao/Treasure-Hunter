@@ -24,10 +24,10 @@ public class BulletController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
 
-            NewPlayerManager.instance.m_NewPlayerAnimation.GetAnimator().SetTrigger("IsHit");
+            NewPlayerManager.Instance.m_NewPlayerAnimation.GetAnimator().SetTrigger("IsHit");
             PlaySoundFxPlayerHit();
-            NewPlayerManager.instance.m_NewPlayerHeal.PlayerHealReduction(m_BulletDmg);
-            NewPlayerManager.instance.m_NewPlayerHeal.CheckPlayerHeal();
+            NewPlayerManager.Instance.m_NewPlayerHeal.PlayerHealReduction(m_BulletDmg);
+            NewPlayerManager.Instance.m_NewPlayerHeal.CheckPlayerHeal();
 
             Destroy(gameObject);
         }

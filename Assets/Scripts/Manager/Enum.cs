@@ -7,6 +7,7 @@ public enum ListenType
     OnPlayerCollectItem,
     OnPauseGame,
     OnResumeGame,
+    OnSendPlayerHeal,
     // Add more event types as needed
 }
 public enum UIType

@@ -37,14 +37,14 @@ public class NewPlayerAttack : MonoBehaviour
         m_IsPressJ = true;
         if(m_IsPressJ)
         {
-            NewPlayerManager.instance.m_NewPlayerAnimation.GetAnimator().SetBool("IsPressed", true);
+            NewPlayerManager.Instance.m_NewPlayerAnimation.GetAnimator().SetBool("IsPressed", true);
             SendEventArrayString();
         }
-        if(NewPlayerManager.instance.playerState == PlayerState.Jumping)
+        if(NewPlayerManager.Instance.playerState == PlayerState.Jumping)
         {
             if(m_IsPressJ)
             {
-                NewPlayerManager.instance.m_NewPlayerAnimation.PlayAirAnimation();
+                NewPlayerManager.Instance.m_NewPlayerAnimation.PlayAirAnimation();
             }
         }
         m_CurrentAttackIndex = (m_CurrentAttackIndex + 1) % m_AttackAnimations.Length;
@@ -62,6 +62,6 @@ public class NewPlayerAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(m_TimeDelay);
         m_IsPressJ = false;
-        NewPlayerManager.instance.m_NewPlayerAnimation.GetAnimator().SetBool("IsPressed", false);
+        NewPlayerManager.Instance.m_NewPlayerAnimation.GetAnimator().SetBool("IsPressed", false);
     }
 }

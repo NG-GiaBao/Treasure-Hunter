@@ -38,11 +38,11 @@ public class NewPlayerMove : MonoBehaviour
         m_IsMoving = Mathf.Abs(m_PlayerMove.x) > Mathf.Epsilon;
         if (m_IsMoving)
         {
-            NewPlayerManager.instance.playerState = PlayerState.Moving;
+            NewPlayerManager.Instance.playerState = PlayerState.Moving;
             this.transform.localScale = new Vector2(x: Mathf.Sign(m_PlayerRb.velocity.x), y: 1f);
         }else
         {
-            NewPlayerManager.instance.playerState = PlayerState.Idle;
+            NewPlayerManager.Instance.playerState = PlayerState.Idle;
         }
         OnIsMoving?.Invoke(m_IsMoving);
     }

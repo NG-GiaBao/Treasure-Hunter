@@ -12,13 +12,13 @@ public class NewPlayerAnimation : MonoBehaviour
 
     private void Start()
     {
-        NewPlayerManager.instance.m_NewPlayerAttack.OnArrayStringAttackAnimation += PlayAttackAnimation;
-        NewPlayerManager.instance.m_NewPlayerMove.OnIsMoving += PlayerIdle;
+        NewPlayerManager.Instance.m_NewPlayerAttack.OnArrayStringAttackAnimation += PlayAttackAnimation;
+        NewPlayerManager.Instance.m_NewPlayerMove.OnIsMoving += PlayerIdle;
     }
     private void OnDestroy()
     {
-        NewPlayerManager.instance.m_NewPlayerMove.OnIsMoving -= PlayerIdle;
-        NewPlayerManager.instance.m_NewPlayerAttack.OnArrayStringAttackAnimation -= PlayAttackAnimation;
+        NewPlayerManager.Instance.m_NewPlayerMove.OnIsMoving -= PlayerIdle;
+        NewPlayerManager.Instance.m_NewPlayerAttack.OnArrayStringAttackAnimation -= PlayAttackAnimation;
     }
 
     public void PlayerIdle(bool IsMoving)

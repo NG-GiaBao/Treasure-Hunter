@@ -27,8 +27,8 @@ public class NewPlayerDealsDamage : MonoBehaviour
             GameObject targetObject = hitCollider.gameObject;
             OnPlayerDamage?.Invoke(m_PlayerDamage, targetObject); // gửi damge và đối tượng
 
-            NewPlayerManager.instance.m_BloodVFx.ActiveBloodVFX(m_SpawnCollider2d);
-            NewPlayerManager.instance.m_NewPlayerSoundFX.ActiveSoundFxHitByPlayer();
+            NewPlayerManager.Instance.m_BloodVFx.ActiveBloodVFX(m_SpawnCollider2d);
+            NewPlayerManager.Instance.m_NewPlayerSoundFX.ActiveSoundFxHitByPlayer();
 
             BossDetecPlayer bossDetecPlayer = hitCollider.GetComponent<BossDetecPlayer>();
             if (bossDetecPlayer != null)
@@ -45,7 +45,7 @@ public class NewPlayerDealsDamage : MonoBehaviour
         {
             GameObject targetObject = hitColliderOnAir.gameObject;
             OnPlayerDamage?.Invoke(m_PlayerDamage, targetObject); // 
-            NewPlayerManager.instance.m_BloodVFx.ActiveBloodVFX(m_SpawnCollider2dOnAir);
+            NewPlayerManager.Instance.m_BloodVFx.ActiveBloodVFX(m_SpawnCollider2dOnAir);
         }
     }
     private void OnDrawGizmosSelected()

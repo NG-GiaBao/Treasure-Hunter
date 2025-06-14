@@ -38,7 +38,7 @@ public class TrapDetectedPlayer : MonoBehaviour
     //}
     protected virtual void DetectPlayers()
     {
-        if(NewPlayerManager.instance.m_NewPlayerHeal.GetIsPlayerDeath()) return;
+        if(NewPlayerManager.Instance.m_NewPlayerHeal.GetIsPlayerDeath()) return;
         m_PlayerDistance = Vector2.Distance(m_PlayerPos.position, transform.position);
 
         if (m_PlayerDistance <= m_DistanceDetecPlayer && m_PlayerDistance >= 0)

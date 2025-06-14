@@ -10,8 +10,9 @@ public class PlayerHealBar : MonoBehaviour
 
     void Start()
     {
-        m_PlayerHealBar.maxValue = NewPlayerManager.instance.m_NewPlayerHeal.ResetPlayerHeal();
-        m_PlayerHealBar.value = NewPlayerManager.instance.m_NewPlayerHeal.ResetPlayerHeal();
+        m_PlayerHealBar.maxValue = NewPlayerManager.Instance.m_NewPlayerHeal.ResetPlayerHeal();
+        m_PlayerHealBar.value = NewPlayerManager.Instance.m_NewPlayerHeal.ResetPlayerHeal();
+        
     }
     private void Update()
     {
@@ -20,7 +21,7 @@ public class PlayerHealBar : MonoBehaviour
     private void UpdataPlayerHeal()
     {
         
-        m_PlayerHealBar.value = NewPlayerManager.instance.m_NewPlayerHeal.UpdatePlayerHeal();
+        m_PlayerHealBar.value = NewPlayerManager.Instance.m_NewPlayerHeal.UpdatePlayerHeal();
     }
 
     

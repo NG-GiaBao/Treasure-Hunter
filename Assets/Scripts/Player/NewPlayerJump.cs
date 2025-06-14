@@ -34,7 +34,7 @@ public class NewPlayerJump : MonoBehaviour
     private void OnJumpPerformed(InputAction.CallbackContext context)
     {
         m_IsPressSpace = true;
-        NewPlayerManager.instance.m_NewPlayerAnimation.PlayerJump(m_IsPressSpace);
+        NewPlayerManager.Instance.m_NewPlayerAnimation.PlayerJump(m_IsPressSpace);
     }
     private void OnJumpCanceled(InputAction.CallbackContext context)
     {
@@ -46,7 +46,7 @@ public class NewPlayerJump : MonoBehaviour
         m_IsGrounded = checkGroundCollider2d != null;
         if (!m_IsGrounded)
         {
-            NewPlayerManager.instance.playerState = PlayerState.Jumping;
+            NewPlayerManager.Instance.playerState = PlayerState.Jumping;
             m_HasPlayedLandingSound = false; // [Sửa] Đặt lại cờ khi đang nhảy
             return;
         }
@@ -55,7 +55,7 @@ public class NewPlayerJump : MonoBehaviour
             if (m_IsPressSpace)
             {
                 //PlayJumoSoundEffect();
-                NewPlayerManager.instance.m_NewPlayerMove.m_PlayerRb.velocity = new Vector2(0, m_PlayerJumpSpeed);
+                NewPlayerManager.Instance.m_NewPlayerMove.m_PlayerRb.velocity = new Vector2(0, m_PlayerJumpSpeed);
                 if (m_JumpDustPos != null && m_JumpDustPrehaps != null)
                 {
                     GameObject justDumst = Instantiate(m_JumpDustPrehaps, m_JumpDustPos.position, Quaternion.identity);
@@ -65,7 +65,7 @@ public class NewPlayerJump : MonoBehaviour
             }
             else
             {
-                NewPlayerManager.instance.m_NewPlayerAnimation.PlayerJump(m_IsPressSpace);
+                NewPlayerManager.Instance.m_NewPlayerAnimation.PlayerJump(m_IsPressSpace);
             }
         }
     }
@@ -74,7 +74,7 @@ public class NewPlayerJump : MonoBehaviour
         // [Sửa] Logic phát âm thanh chỉ khi chạm đất lần đầu
         if (m_IsGrounded && !m_HasPlayedLandingSound)
         {
-            NewPlayerManager.instance.m_NewPlayerSoundFX.PlayLandingSoundEffect();
+            NewPlayerManager.Instance.m_NewPlayerSoundFX.PlayLandingSoundEffect();
             m_HasPlayedLandingSound = true; // Đặt cờ để ngăn phát âm thanh liên tục
         }
     }
