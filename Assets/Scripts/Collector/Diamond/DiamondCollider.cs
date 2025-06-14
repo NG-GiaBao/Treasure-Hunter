@@ -49,7 +49,7 @@ public class DiamondCollider : MonoBehaviour
 
     private void DiamondAudioClip()
     {
-        AudioManager.instance.PlaySoundEffect(m_DiamondAudioClip);
+        AudioManager.Instance.PlaySoundEffect(m_DiamondAudioClip);
     }
     private void ActiveEffect()
     {

@@ -19,6 +19,7 @@ public class TrapGravity : MonoBehaviour
     private void Start()
     {
         m_TrapRB.gravityScale = 0f;
+        m_PlayerPosition = NewPlayerManager.Instance.transform;
     }
     // Start is called before the first frame update
     // Update is called once per frame

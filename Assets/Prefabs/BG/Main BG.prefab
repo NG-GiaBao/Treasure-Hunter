@@ -768,7 +768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StartPos: {x: 0, y: 0, z: 0}
   m_MoveBg: {x: 1, y: 0, z: 0}
-  m_BgSpeed: 2
+  m_BgSpeed: 1
 --- !u!61 &1446648504514508507
 BoxCollider2D:
   m_ObjectHideFlags: 0

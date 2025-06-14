@@ -12,30 +12,30 @@ public class BoardGameOver : MonoBehaviour
    
     public void RestartOnClick()
     {
-        GameManager.instance.RestartGame(CurrentSceneTransitionSettings, timeDelay);
+        GameManager.Instance.RestartGame(CurrentSceneTransitionSettings, timeDelay);
         Time.timeScale = 1f;
-        GameManager.instance.m_IsPlayerDeath = false;
+        GameManager.Instance.m_IsPlayerDeath = false;
         this.gameObject.SetActive(false);
         HandlerManager.Instance.RestartGameState();
-        if (GameManager.instance.gameMap == GameMap.Lv1) AudioManager.instance.PlayGameMusic();
-        else if(GameManager.instance.gameMap == GameMap.Lv2) AudioManager.instance.NextGameMusic();
-        GameManager.instance.m_IsBossActive = false;
+        if (GameManager.Instance.gameMap == GameMap.Lv1) AudioManager.Instance.PlayGameMusic();
+        else if(GameManager.Instance.gameMap == GameMap.Lv2) AudioManager.Instance.NextGameMusic();
+        GameManager.Instance.m_IsBossActive = false;
     }
 
     public void BackToMenuOnClick()
     {
         
-        GameManager.instance.gameState = GameState.None;
+        GameManager.Instance.gameState = GameState.None;
         HandlerManager.Instance.LoadSceneTransition(menuNameScene, LoadMenuTransitionSettings, timeDelay);
         this.gameObject.SetActive(false);
         HandlerManager.Instance.BackToMenuOpening();
-        AudioManager.instance.MenuGameMusic();
+        AudioManager.Instance.MenuGameMusic();
         HandlerManager.Instance.m_MissionTilte.gameObject.SetActive(false );
         HandlerManager.Instance.m_GoldCoint.SetActive(false );
     }
     private IEnumerator DelayBossActivation()
     {
         yield return new WaitForSeconds(1f); // Thời gian chờ
-        GameManager.instance.m_IsBossActive = false; // Kích hoạt boss
+        GameManager.Instance.m_IsBossActive = false; // Kích hoạt boss
     }
 }

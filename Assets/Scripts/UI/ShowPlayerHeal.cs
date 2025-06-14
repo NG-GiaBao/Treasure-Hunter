@@ -6,7 +6,7 @@ public class ShowPlayerHeal : MonoBehaviour
 {
     public void StartGameState()
     {
-        if (GameManager.instance.gameState != GameState.None) return;
+        if (GameManager.Instance.gameState != GameState.None) return;
 
         this.gameObject.SetActive(false);
 
@@ -14,7 +14,7 @@ public class ShowPlayerHeal : MonoBehaviour
 
     public void RunGameState()
     {
-        if (GameManager.instance.gameState != GameState.Run) return;
+        if (GameManager.Instance.gameState != GameState.Run) return;
 
         this.gameObject.SetActive(true);
     }

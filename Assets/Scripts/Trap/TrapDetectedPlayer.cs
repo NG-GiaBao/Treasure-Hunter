@@ -20,6 +20,11 @@ public class TrapDetectedPlayer : MonoBehaviour
     {
         m_Controller = GetComponent<TrapController>();
     }
+    private void Start()
+    {
+        m_PlayerPos = NewPlayerManager.Instance.transform;
+
+    }
 
     private void Update()
     {

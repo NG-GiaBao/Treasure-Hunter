@@ -19,7 +19,7 @@ public class ShowCollector : MonoBehaviour
 
     public void StartGameState()
     {
-        if (GameManager.instance.gameState != GameState.None) return;
+        if (GameManager.Instance.gameState != GameState.None) return;
 
         this.gameObject.SetActive(false);
         HandlerManager.Instance.m_GoldCoint.SetActive(false);
@@ -27,7 +27,7 @@ public class ShowCollector : MonoBehaviour
     }
     public void RunGameState()
     {
-        if (GameManager.instance.gameState != GameState.Run) return;
+        if (GameManager.Instance.gameState != GameState.Run) return;
 
         this.gameObject.SetActive(true);
         HandlerManager.Instance.m_GoldCoint.SetActive(true);

@@ -19,7 +19,7 @@ public enum GameMap
     Lv1,
     Lv2
 }
-public class GameManager : MonoBehaviour
+public class GameManager : BaseManager<GameManager>
 {
     [Header("Player Heal")]
     [SerializeField] private PlayerStatSO playerStatSO;
@@ -29,23 +29,10 @@ public class GameManager : MonoBehaviour
     public GameMap gameMap;
     public bool m_IsBossActive = true;
 
-    public static GameManager instance;
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
     private void Start()
     {
-       SetStateGame(GameState.StartGame);
+        SetStateGame(GameState.StartGame);
         StartGame();
         //playerHeal = playerStatSO.PlayerHealth;
         ////BulletController.OnGetBulletDmg += ReceriverDamge;
@@ -67,9 +54,10 @@ public class GameManager : MonoBehaviour
     }
     private void StartGame()
     {
-        if(UIManager.HasInstance)
+        if (UIManager.HasInstance)
         {
             UIManager.Instance.ShowScreen<ScreenMenuOpening>();
+            UIManager.Instance.ShowNotify<NotifyFakeLoading>();
         }
     }
     public void LoadScene(string nameScene)
@@ -77,7 +65,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(nameScene);
     }
 
-    public void RestartGame(TransitionSettings transition,float timedelay)
+    public void RestartGame(TransitionSettings transition, float timedelay)
     {
         string currentScene = SceneManager.GetActiveScene().name;
         TransitionManager.Instance().Transition(currentScene, transition, timedelay);

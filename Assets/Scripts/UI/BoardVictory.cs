@@ -12,7 +12,7 @@ public class BoardVictory : MonoBehaviour
     [SerializeField] private float timeDelay;
     public void BackToMenuOnClick()
     {
-        GameManager.instance.gameState = GameState.None;
+        GameManager.Instance.gameState = GameState.None;
         HandlerManager.Instance.LoadSceneTransition(menuNameScene, LoadMenuTransitionSettings, timeDelay);
         this.gameObject.SetActive(false);
         HandlerManager.Instance.BackToMenuOpening();
@@ -24,7 +24,7 @@ public class BoardVictory : MonoBehaviour
     {
         HandlerManager.Instance.LoadSceneTransition(nameNextLevelScene, NextToLevelTransitionSettings, timeDelay);
         this.gameObject.SetActive(false);
-        GameManager.instance.SetMap(GameMap.Lv2);
+        GameManager.Instance.SetMap(GameMap.Lv2);
         HandlerManager.Instance.m_IsWin = false;
         HandlerManager.Instance.RestartGameState();
         AudioManager.instance.NextGameMusic();

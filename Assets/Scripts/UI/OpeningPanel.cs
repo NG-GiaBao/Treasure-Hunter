@@ -14,9 +14,9 @@ public class OpeningPanel : MonoBehaviour
     public void StartButton()
     {
         HandlerManager.Instance.LoadSceneTransition(gamePlayScene, gamePlaySceneTransitionSettings, timeDelay);
-        GameManager.instance.SetStateGame(GameState.Run);
-        GameManager.instance.SetMap(GameMap.Lv1);
-        AudioManager.instance.PlayGameMusic();
+        GameManager.Instance.SetStateGame(GameState.Run);
+        GameManager.Instance.SetMap(GameMap.Lv1);
+        AudioManager.Instance.PlayGameMusic();
     }
     public void IntructionButton()
     {
@@ -40,7 +40,7 @@ public class OpeningPanel : MonoBehaviour
 
     public void RunGameState()
     {
-        if (GameManager.instance.gameState != GameState.Run) return;
+        if (GameManager.Instance.gameState != GameState.Run) return;
 
         this.gameObject.SetActive(false);
     }

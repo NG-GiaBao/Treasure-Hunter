@@ -48,7 +48,7 @@ public class BossDetecPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameManager.instance.m_IsBossActive)
+        if (!GameManager.Instance.m_IsBossActive)
         {
             m_EnemyAnimator.SetBool("Attack", false);
             return;

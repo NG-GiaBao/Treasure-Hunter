@@ -96,13 +96,13 @@ public class HandlerManager : MonoBehaviour
         UpDateToggleMusic();
         EscapeOnClick();
         showCollector.UpdateCountCollector();
-        if (GameManager.instance.gameState == GameState.Run)
+        if (GameManager.Instance.gameState == GameState.Run)
         {
             StartCoroutine(DelayShowPanel());
         }
         CheckCompleleMapLv1();
 
-        if(GameManager.instance.gameMap == GameMap.Lv2)
+        if(GameManager.Instance.gameMap == GameMap.Lv2)
         {
             StartCoroutine(DelaySetTarget());
         }
@@ -190,7 +190,7 @@ public class HandlerManager : MonoBehaviour
     {
         if (CheckIsMapLv1MisionComplele())
         {
-            if (GameManager.instance.gameMap == GameMap.Lv1)
+            if (GameManager.Instance.gameMap == GameMap.Lv1)
             {
                 boardVictory.gameObject.SetActive(true);
             }
@@ -204,7 +204,7 @@ public class HandlerManager : MonoBehaviour
     {
         if (CheckIsMapLv1MisionComplele())
         {
-            if (GameManager.instance.gameMap == GameMap.Lv2)
+            if (GameManager.Instance.gameMap == GameMap.Lv2)
             {
                 boardVictory.gameObject.SetActive(true);
             }

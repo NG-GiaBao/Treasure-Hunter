@@ -40,6 +40,7 @@ public class EnemyMove : MonoBehaviour
     private void Start()
     {
         m_DefaulSpeed = m_EnemySpeed;
+        m_PlayerPosion = NewPlayerManager.Instance.transform;
     }
 
     // Update is called once per frame

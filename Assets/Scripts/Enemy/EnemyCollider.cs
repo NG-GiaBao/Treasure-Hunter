@@ -54,7 +54,7 @@ public class EnemyCollider : MonoBehaviour
 
             if (collider2D != null)
             {
-                GameManager.instance.ReceriverDamge(enemyDamage.GetEnemyDamage());
+                GameManager.Instance.ReceriverDamge(enemyDamage.GetEnemyDamage());
                 BloodVFx bloodVFx = collider2D.GetComponent<BloodVFx>();
                 Animator animator = collider2D.GetComponent<Animator>();
                 if (animator != null && bloodVFx != null)

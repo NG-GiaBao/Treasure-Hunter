@@ -189,6 +189,7 @@ MonoBehaviour:
   intructionsBtn: {fileID: 116256972210701292}
   settingBtn: {fileID: 1837065630151552278}
   quitBtn: {fileID: 7643399034724458253}
+  nameScene: GameMaplv1
 --- !u!1 &4372677509951167858
 GameObject:
   m_ObjectHideFlags: 0

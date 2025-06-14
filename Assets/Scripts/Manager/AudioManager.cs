@@ -12,13 +12,30 @@ public class AudioManager : BaseManager<AudioManager>
     public AudioClip nextLevel;
     public AudioClip CombatMusic;
 
-    public static AudioManager instance;
+    private readonly Dictionary<string, AudioClip> bgmDitc = new();
+    private readonly Dictionary<string, AudioClip> seDitc = new();
+    private readonly string PATH_AUDIO_CLIP_BGM = "Audio/BGM";
+    private readonly string PATH_AUDIO_CLIP_SE = "Audio/SE";
+
+
+
 
 
     private void Start()
     {
-        MenuGameMusic();
+        //MenuGameMusic();
+        LoadAllAudioClip(PATH_AUDIO_CLIP_BGM);
     }
+    private void LoadAllAudioClip(string path)
+    {
+        foreach (var item in Resources.LoadAll<AudioClip>(path))
+        {
+            if (!bgmDitc.ContainsKey(item.name))
+            {
+                bgmDitc.Add(item.name, item);
+            }
+        }
+    }    
     public void PlaySoundEffect(AudioClip audioClip)
     {
         SEAudio.PlayOneShot(audioClip);

@@ -47,6 +47,14 @@ public class PopupSetting : BasePopup
         if(AudioManager.HasInstance)
         {
             SetSlider(value, false, soundSlider);
+            if(value == 0)
+            {
+                soundToggle.isOn = true;
+            }
+            else
+            {
+                soundToggle.isOn = false;
+            }
         }
     }
     private void OnClickMusicSlider(float value)
@@ -54,6 +62,14 @@ public class PopupSetting : BasePopup
         if (AudioManager.HasInstance)
         {
             SetSlider(value, true, musicSlider);
+            if(value == 0)
+            {
+                musicToggle.isOn = true;
+            }
+            else
+            {
+                musicToggle.isOn = false;
+            }
         }
     }
     private void OnExitButtonClick()
