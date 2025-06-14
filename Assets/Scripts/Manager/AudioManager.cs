@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : BaseManager<AudioManager>
 {
 
-    [SerializeField] private AudioSource backGroundaudioSource;
-    [SerializeField] private AudioSource EffectAudioSource;
+    public AudioSource BGMAudio;
+    public AudioSource SEAudio;
     public AudioClip menuGameMusic;
     public AudioClip playGameMusic;
     public AudioClip nextLevel;
@@ -15,40 +15,27 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
     private void Start()
     {
-
         MenuGameMusic();
     }
     public void PlaySoundEffect(AudioClip audioClip)
     {
-        EffectAudioSource.PlayOneShot(audioClip);
+        SEAudio.PlayOneShot(audioClip);
     }
 
     public void PlayBackGroundMusic(AudioClip audioClip)
     {
-        if (backGroundaudioSource.isPlaying)
+        if (BGMAudio.isPlaying)
         {
-           backGroundaudioSource.Stop();
-           backGroundaudioSource.clip = audioClip;
-           backGroundaudioSource.Play();
+            BGMAudio.Stop();
+            BGMAudio.clip = audioClip;
+            BGMAudio.Play();
         }
         else
         {
-            backGroundaudioSource.clip = audioClip;
-            backGroundaudioSource.Play();
+            BGMAudio.clip = audioClip;
+            BGMAudio.Play();
         }
     }
 

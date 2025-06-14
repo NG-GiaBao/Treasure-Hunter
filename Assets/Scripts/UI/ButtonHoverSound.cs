@@ -9,6 +9,6 @@ public class ButtonHoverSound : MonoBehaviour , IPointerEnterHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        AudioManager.instance.PlaySoundEffect(m_ButtonHightlightSound);
+        AudioManager.Instance.PlaySoundEffect(m_ButtonHightlightSound);
     }
 }

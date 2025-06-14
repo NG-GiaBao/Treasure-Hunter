@@ -24,7 +24,7 @@ public class BoardVictory : MonoBehaviour
     {
         HandlerManager.Instance.LoadSceneTransition(nameNextLevelScene, NextToLevelTransitionSettings, timeDelay);
         this.gameObject.SetActive(false);
-        GameManager.instance.NextMapLv2();
+        GameManager.instance.SetMap(GameMap.Lv2);
         HandlerManager.Instance.m_IsWin = false;
         HandlerManager.Instance.RestartGameState();
         AudioManager.instance.NextGameMusic();

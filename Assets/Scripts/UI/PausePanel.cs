@@ -12,7 +12,7 @@ public class PausePanel : MonoBehaviour
     {
         if(GameManager.instance.gameState == GameState.Run)
         {
-            GameManager.instance.PauseGame();
+            GameManager.instance.SetStateGame(GameState.Pause);
             gameObject.SetActive(true);
             Time.timeScale = 0f;
         }

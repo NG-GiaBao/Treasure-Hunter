@@ -14,8 +14,8 @@ public class OpeningPanel : MonoBehaviour
     public void StartButton()
     {
         HandlerManager.Instance.LoadSceneTransition(gamePlayScene, gamePlaySceneTransitionSettings, timeDelay);
-        GameManager.instance.RunGame();
-        GameManager.instance.StartMap();
+        GameManager.instance.SetStateGame(GameState.Run);
+        GameManager.instance.SetMap(GameMap.Lv1);
         AudioManager.instance.PlayGameMusic();
     }
     public void IntructionButton()

@@ -16,30 +16,30 @@ public class NewPlayerSoundFX : MonoBehaviour
 
     public void ActiveSoundFxHitByPlayer()
     {
-        AudioManager.instance.PlaySoundEffect(m_SoundFxAttack);
+        AudioManager.Instance.PlaySoundEffect(m_SoundFxAttack);
     }
     public void PlayMoveSoundEffect()
     {
-        AudioManager.instance.PlaySoundEffect(m_MoveAudio);
+        AudioManager.Instance.PlaySoundEffect(m_MoveAudio);
     }
     public void PlayJumoSoundEffect()
     {
-        AudioManager.instance.PlaySoundEffect(m_JumpAudio);
+        AudioManager.Instance.PlaySoundEffect(m_JumpAudio);
     }
     public void PlayAttackFirstSoundEffect()
     {
-        AudioManager.instance.PlaySoundEffect(m_AttackFirstAudio);
+        AudioManager.Instance.PlaySoundEffect(m_AttackFirstAudio);
     }
     public void PlayAttackSecondSoundEffect()
     {
-        AudioManager.instance.PlaySoundEffect(m_AttackSecondAudio);
+        AudioManager.Instance.PlaySoundEffect(m_AttackSecondAudio);
     }
     public void PlayAttackAirSoundEffect()
     {
-        AudioManager.instance.PlaySoundEffect(m_AttackAirAudio);
+        AudioManager.Instance.PlaySoundEffect(m_AttackAirAudio);
     }
     public void PlayLandingSoundEffect()
     {
-        AudioManager.instance.PlaySoundEffect(m_LandingAudio);
+        AudioManager.Instance.PlaySoundEffect(m_LandingAudio);
     }
 }

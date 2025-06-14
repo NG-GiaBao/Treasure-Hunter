@@ -4,6 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum GameState
+{
+    None,
+    Run,
+    Pause,
+    Resume,
+    StartGame,
+    EndGame,
+}
+
+public enum GameMap
+{
+    Lv1,
+    Lv2
+}
 public class GameManager : MonoBehaviour
 {
     [Header("Player Heal")]
@@ -30,24 +45,32 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+       SetStateGame(GameState.StartGame);
         StartGame();
-        playerHeal = playerStatSO.PlayerHealth;
-        //BulletController.OnGetBulletDmg += ReceriverDamge;
+        //playerHeal = playerStatSO.PlayerHealth;
+        ////BulletController.OnGetBulletDmg += ReceriverDamge;
     }
-    private void Update()
-    {
-        if(m_IsPlayerDeath && gameMap == GameMap.Lv2)
-        {
-            m_IsBossActive = false;
-        }
-        else if(!m_IsPlayerDeath && gameMap == GameMap.Lv2)
-        {
-            StartCoroutine(DelayPlayer());
-        }
-    }
+    //private void Update()
+    //{
+    //    if(m_IsPlayerDeath && gameMap == GameMap.Lv2)
+    //    {
+    //        m_IsBossActive = false;
+    //    }
+    //    else if(!m_IsPlayerDeath && gameMap == GameMap.Lv2)
+    //    {
+    //        StartCoroutine(DelayPlayer());
+    //    }
+    //}
     private void OnDisable()
     {
         //BulletController.OnGetBulletDmg -= ReceriverDamge;
+    }
+    private void StartGame()
+    {
+        if(UIManager.HasInstance)
+        {
+            UIManager.Instance.ShowScreen<ScreenMenuOpening>();
+        }
     }
     public void LoadScene(string nameScene)
     {
@@ -61,7 +84,6 @@ public class GameManager : MonoBehaviour
         playerHeal = playerStatSO.PlayerHealth;
 
     }
-    
 
     public int UpdatePlayerHeal()
     {
@@ -73,31 +95,13 @@ public class GameManager : MonoBehaviour
         playerHeal -= damage;
     }
 
-    public GameState StartGame()
+    public void SetStateGame(GameState gameState)
     {
-       gameState = GameState.None ;
-        return gameState;
+        this.gameState = gameState;
     }
-    public GameState PauseGame()
+    public void SetMap(GameMap gameMap)
     {
-        gameState = GameState.Pause;
-        return gameState;
-    }
-
-    public GameState RunGame()
-    {
-        gameState = GameState.Run;
-        return gameState;
-    }
-    public GameMap StartMap()
-    {
-        gameMap = GameMap.Lv1 ;
-        return gameMap;
-    }
-    public GameMap NextMapLv2()
-    {
-        gameMap = GameMap.Lv2;
-        return gameMap;
+        this.gameMap = gameMap;
     }
 
     IEnumerator DelayPlayer()
@@ -107,16 +111,4 @@ public class GameManager : MonoBehaviour
     }
 }
 
-public enum GameState
-{
-    None,
-    Run,
-    Pause,
-    Resume
-}
 
-public enum GameMap
-{
-    Lv1,
-    Lv2
-}

@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PopupIntructions : MonoBehaviour
+public class PopupIntructions : BasePopup
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Button exitButton;
+    private void Start()
     {
-        
+        if (exitButton != null)
+        {
+            exitButton.onClick.AddListener(OnExitButtonClick);
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnExitButtonClick()
     {
-        
+        this.Hide();
     }
 }

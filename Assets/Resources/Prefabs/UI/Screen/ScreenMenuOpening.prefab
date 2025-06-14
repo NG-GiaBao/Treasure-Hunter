@@ -184,6 +184,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58cba620f14e3374eaecb1f50e4a6fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offSet: {x: 550, y: 0}
+  startBtn: {fileID: 2974003259660290973}
+  intructionsBtn: {fileID: 116256972210701292}
+  settingBtn: {fileID: 1837065630151552278}
+  quitBtn: {fileID: 7643399034724458253}
 --- !u!1 &4372677509951167858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,7 +1023,7 @@ GameObject:
   - component: {fileID: 7393201275353406244}
   - component: {fileID: 3921425696023008247}
   m_Layer: 5
-  m_Name: UIOpening_Panel
+  m_Name: ButtonPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1112,13 +1117,13 @@ MonoBehaviour:
   m_Padding:
     m_Left: 50
     m_Right: 0
-    m_Top: 0
+    m_Top: -80
     m_Bottom: 0
   m_ChildAlignment: 1
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 541.8, y: 217.4}
-  m_Spacing: {x: 0, y: -80.2}
+  m_CellSize: {x: 550, y: 335}
+  m_Spacing: {x: 0, y: -180}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &8165394943318774981
