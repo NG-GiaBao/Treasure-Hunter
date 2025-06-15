@@ -1,4 +1,5 @@
 using EasyTransition;
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ public enum GameState
     Resume,
     StartGame,
     EndGame,
+    MenuGame,
 }
 
 public enum GameMap
@@ -29,28 +31,50 @@ public class GameManager : BaseManager<GameManager>
     public GameMap gameMap;
     public bool m_IsBossActive = true;
 
+    [Header("Value Item")]
+    [ShowInInspector]
+    private readonly Dictionary<ItemType, int> ItemValue = new();
+
 
     private void Start()
     {
-        SetStateGame(GameState.StartGame);
+        InitDict();
+        SetStateGame(GameState.MenuGame);
         StartGame();
-        //playerHeal = playerStatSO.PlayerHealth;
-        ////BulletController.OnGetBulletDmg += ReceriverDamge;
     }
-    //private void Update()
-    //{
-    //    if(m_IsPlayerDeath && gameMap == GameMap.Lv2)
-    //    {
-    //        m_IsBossActive = false;
-    //    }
-    //    else if(!m_IsPlayerDeath && gameMap == GameMap.Lv2)
-    //    {
-    //        StartCoroutine(DelayPlayer());
-    //    }
-    //}
-    private void OnDisable()
+    private void InitDict()
     {
-        //BulletController.OnGetBulletDmg -= ReceriverDamge;
+        ItemValue.Add(ItemType.Coin, 0);
+        ItemValue.Add(ItemType.GreenDiamond, 0);
+        ItemValue.Add(ItemType.RedDiamond, 0);
+        ItemValue.Add(ItemType.BlueDiamond, 0);
+    }
+    public void AddItemValue(ItemType itemType,int amout = 1)
+    {
+        if (ItemValue.ContainsKey(itemType))
+        {
+            ItemValue[itemType] += amout;
+            if(ListenerManager.HasInstance)
+            {
+                ListenerManager.Instance.BroadCast(ListenType.OnSendItemValue, (itemType, ItemValue[itemType]));
+            }
+        }
+        else
+        {
+            Debug.LogError($"ItemType {itemType} not found in ItemValue dictionary.");
+        }
+    }
+    public int GetItemValue(ItemType itemType)
+    {
+        if (ItemValue.ContainsKey(itemType))
+        {
+            return ItemValue[itemType];
+        }
+        else
+        {
+            Debug.LogError($"ItemType {itemType} not found in ItemValue dictionary.");
+            return 0;
+        }
     }
     private void StartGame()
     {
@@ -59,6 +83,7 @@ public class GameManager : BaseManager<GameManager>
             UIManager.Instance.ShowScreen<ScreenMenuOpening>();
             UIManager.Instance.ShowNotify<NotifyFakeLoading>();
         }
+        
     }
     public void LoadScene(string nameScene)
     {

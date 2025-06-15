@@ -11,7 +11,7 @@ public class BossZone : MonoBehaviour
         {
             Debug.Log("go");
             GetSpriteRenderer();
-            AudioManager.instance.MusicCombat();
+            AudioManager.Instance.MusicCombat();
         }
     }
 

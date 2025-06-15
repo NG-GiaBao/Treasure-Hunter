@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7412653264916733093}
   - component: {fileID: 1927732460528844310}
   - component: {fileID: 993269434832772385}
-  - component: {fileID: 5393468456014731967}
   - component: {fileID: 1534006825080495776}
   - component: {fileID: 8156625075819930098}
+  - component: {fileID: 4202387500316692226}
   m_Layer: 0
   m_Name: BlueDiamond
   m_TagString: Diamond
@@ -109,25 +109,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5393468456014731967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4147571070044202414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99e8983be3fed0144afa4c81fa547629, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsTouchPlayer: 0
-  m_TimeDestroy: 0.5
-  m_DiamondCollider: {fileID: 0}
-  m_DiamondAnim: {fileID: 0}
-  DiamondType: 
-  m_DiamondAudioClip: {fileID: 8300000, guid: ba39bf8baf6d13046889b2d64822381a, type: 3}
-  m_CollerEffect: {fileID: 419678502511124689, guid: 185508a6459314a43bbf634d2b3143e4, type: 3}
 --- !u!114 &1534006825080495776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,3 +168,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5711937, y: 0.48736477}
   m_EdgeRadius: 0
+--- !u!114 &4202387500316692226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4147571070044202414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1298228733706694caffee60843b3acb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 8

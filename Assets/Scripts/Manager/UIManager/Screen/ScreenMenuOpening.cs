@@ -33,14 +33,16 @@ public class ScreenMenuOpening : BaseScreen
     }
     private void OnClickStartButton()
     {
-        if(HandlerTransitionManager.HasInstance)
+        if (HandlerTransitionManager.HasInstance)
         {
             HandlerTransitionManager.Instance.LoadScene(nameScene);
         }
-        if(GameManager.HasInstance)
+
+        if (GameManager.HasInstance)
         {
             GameManager.Instance.SetMap(GameMap.Lv1);
         }
+        SoundClickButton();
         TransitionManager.Instance().onTransitionEnd += ShowImformationPlayer;
         Invoke(nameof(this.Hide), 1f);
     }    
@@ -50,6 +52,11 @@ public class ScreenMenuOpening : BaseScreen
         {
             UIManager.Instance.ShowScreen<ScreenHealBarPlayer>();
         }
+        if (AudioManager.HasInstance)
+        {
+            AudioManager.Instance.PlayBGM("Happy");
+        }
+        SoundClickButton();
     }
     private void OnClickSettingButton()
     {
@@ -57,14 +64,24 @@ public class ScreenMenuOpening : BaseScreen
         {
             UIManager.Instance.ShowPopup<PopupSetting>();
         }
+        SoundClickButton();
     }
     private void OnClickIntructionsButton()
     {
         if(UIManager.HasInstance)
         {
+
             UIManager.Instance.ShowPopup<PopupIntructions>();
         }
+        SoundClickButton();
     }
+    private void SoundClickButton()
+    {
+        if (AudioManager.HasInstance)
+        {
+            AudioManager.Instance.PlaySE("ClickButton");
+        }
+    }    
     private void OnClickQuitButton()
     {
 #if UNITY_EDITOR

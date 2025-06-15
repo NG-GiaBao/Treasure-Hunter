@@ -993,7 +993,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7834b7fc888a6774b8a1ea1d68d01c8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IsEnemyDirectionRight: 0
 --- !u!114 &2237348022576415472
 MonoBehaviour:
   m_ObjectHideFlags: 0

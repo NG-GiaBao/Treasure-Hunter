@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class EnemyFlip : MonoBehaviour
 {
+  
 
-    private void Start()
-    {
-        EnemyDetectedPlayer.OnValueEnemyFlipPlayer += Flip;
-    }
-    private void OnDestroy()
-    {
-        EnemyDetectedPlayer.OnValueEnemyFlipPlayer -= Flip;
-    }
+    //private void Start()
+    //{
+    //    EnemyDetectedPlayer.OnValueEnemyFlipPlayer += Flip;
+    //}
+    //private void OnDestroy()
+    //{
+    //    EnemyDetectedPlayer.OnValueEnemyFlipPlayer -= Flip;
+    //}
     private void Flip(float ValueFlipDirection, GameObject gameObject)
     {
         if(gameObject == this.gameObject)

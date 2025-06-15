@@ -160,8 +160,8 @@ RectTransform:
   m_GameObject: {fileID: 625196858261600633}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8132161481370293347}
   - {fileID: 4950578895495117459}
@@ -184,6 +184,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ba484bd05a4ee458797bf63f55166d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redDiamond: {fileID: 7354346988663998998}
+  redDiamondRect: {fileID: 3519928633537298970}
+  blueDiamond: {fileID: 4444705989349189855}
+  blueDiamondRect: {fileID: 7885248363799529564}
+  greenDiamond: {fileID: 4635838002757569089}
+  greenDiamondRect: {fileID: 108643699210354713}
 --- !u!1 &723594003859646482
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,7 +488,6 @@ GameObject:
   - component: {fileID: 7950494679320902415}
   - component: {fileID: 2599247737065453862}
   - component: {fileID: 7184721430433450793}
-  - component: {fileID: 2930278731886339009}
   m_Layer: 0
   m_Name: UIShowCollector_Panel
   m_TagString: Untagged
@@ -574,23 +579,6 @@ MonoBehaviour:
   m_Spacing: {x: 100, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &2930278731886339009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4204877737848633926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 058903b81d6fa194d8503d69cfd4cc3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listTextCollector:
-  - {fileID: 4444705989349189855}
-  - {fileID: 7354346988663998998}
-  - {fileID: 4635838002757569089}
-  - {fileID: 0}
 --- !u!1 &4636101124561953190
 GameObject:
   m_ObjectHideFlags: 0

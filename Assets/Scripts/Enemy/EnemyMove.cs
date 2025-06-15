@@ -53,7 +53,7 @@ public class EnemyMove : MonoBehaviour
         CancelAttackPlayerPointRight();
         CancelAttackPlayerPointLeft();
         EnemyDistance();
-        //EnemyChasePlayer();
+        EnemyChasePlayer();
         EnemyVelocityMove();
 
         //UpdateDirection();
@@ -92,45 +92,45 @@ public class EnemyMove : MonoBehaviour
         }
     }
 
-    //public virtual void EnemyChasePlayer()
-    //{
-    //    if (GameManager.instance.m_IsPlayerDeath)
-    //    {
-    //        this.enabled = false;
-    //        return;
-    //    }
-    //    else
-    //    {
-    //        this.enabled = true;
-    //    }
+    public virtual void EnemyChasePlayer()
+    {
+        if (GameManager.Instance.m_IsPlayerDeath)
+        {
+            this.enabled = false;
+            return;
+        }
+        else
+        {
+            this.enabled = true;
+        }
 
-    //    if ((m_DistancePlayerX < m_TargetDistanceDetecPlayerX && m_DistancePlayerY < 0) && m_PlayerDistanceEnemy < m_TargetDistanceDetecPlayerX)
-    //    {
-    //        m_IsDetecPlayer = true;
-    //        if (m_IsDetecPlayer)
-    //        {
-    //            m_EnemyAnimator.SetBool("Attack", true);
-    //            m_EnemySpeed = 6;
-    //            Vector2 direction = new Vector2(m_PlayerPosion.position.x - transform.position.x, 0f).normalized;
-    //            m_EnemyRb.velocity = direction * m_EnemySpeed;
-    //            if (direction.x == 1)
-    //            {
-    //                transform.localScale = new Vector3(-1f, 1f, 1f);
-    //            }
-    //            else if (direction.x == -1)
-    //            {
-    //                transform.localScale = new Vector3(1f, 1f, 1f);
-    //            }
+        if ((m_DistancePlayerX < m_TargetDistanceDetecPlayerX && m_DistancePlayerY < 0) && m_PlayerDistanceEnemy < m_TargetDistanceDetecPlayerX)
+        {
+            m_IsDetecPlayer = true;
+            if (m_IsDetecPlayer)
+            {
+                m_EnemyAnimator.SetBool("Attack", true);
+                m_EnemySpeed = 6;
+                Vector2 direction = new Vector2(m_PlayerPosion.position.x - transform.position.x, 0f).normalized;
+                m_EnemyRb.velocity = direction * m_EnemySpeed;
+                if (direction.x == 1)
+                {
+                    transform.localScale = new Vector3(-1f, 1f, 1f);
+                }
+                else if (direction.x == -1)
+                {
+                    transform.localScale = new Vector3(1f, 1f, 1f);
+                }
 
-    //        }
-    //    }
-    //    else if (m_DistancePlayerY > 1.5)
-    //    {
-    //        m_IsDetecPlayer = false;
-    //        m_EnemyAnimator.SetBool("Attack", false);
-    //        m_EnemySpeed = m_DefaulSpeed;
-    //    }
-    //}
+            }
+        }
+        else if (m_DistancePlayerY > 1.5)
+        {
+            m_IsDetecPlayer = false;
+            m_EnemyAnimator.SetBool("Attack", false);
+            m_EnemySpeed = m_DefaulSpeed;
+        }
+    }
 
     private void CancelAttackPlayerPointRight()
     {

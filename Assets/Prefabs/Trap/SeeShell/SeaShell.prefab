@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 1163369924491677975}
   - component: {fileID: 7454387671097408886}
   - component: {fileID: 2203010216558775046}
+  - component: {fileID: 1780098703792489892}
   m_Layer: 10
   m_Name: SeaShell
   m_TagString: Trap
@@ -441,11 +442,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae435e2f297b27a4187ec601a821b64e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BulletPrehap: {fileID: 4166106266512015614, guid: b2011ba059e612946a46d9389f095001, type: 3}
-  m_BulletSpeed: 10
   m_SpawnPoint: {fileID: 2764211114260358441}
-  m_TimeDestroyBullet: 2
-  m_ShootAudioClip: {fileID: 8300000, guid: 8109bb0b4ffa8fb42889513d3827450d, type: 3}
+  m_TimeDestroyBullet: 3
+  m_SpeedShoot: 10
+  m_BulletPool: {fileID: 0}
+  trapController: {fileID: 0}
 --- !u!70 &7046231420390395495
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -509,7 +510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsDirectionRight: 0
-  m_TrapDetected: {fileID: 0}
+  m_Controller: {fileID: 0}
 --- !u!114 &1022482692002926739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,6 +528,7 @@ MonoBehaviour:
   m_DistanceDetecPlayer: 5
   m_ValueFlipDirection: 0
   m_TrapDetecPlayer: 0
+  m_Controller: {fileID: 0}
 --- !u!114 &2811860051280242468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,6 +543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TrapHealSO: {fileID: 11400000, guid: 193da5871dab8ed48aee0c8257aa8aef, type: 2}
   m_TrapHeal: 0
+  m_TrapController: {fileID: 0}
 --- !u!114 &1163369924491677975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,6 +557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 0}
+  speedAnim: 0.5
 --- !u!114 &7454387671097408886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,6 +587,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrapAnim: {fileID: 0}
+  m_TrapDetectedPlayer: {fileID: 0}
+  m_TrapFlip: {fileID: 0}
+  m_TrapHeal: {fileID: 0}
+  m_Destroyed: {fileID: 0}
+--- !u!114 &1780098703792489892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807241835157994028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e227f52515e8e4e4fa40915ce7a9a58d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BulletPrefabs: {fileID: 4166106266512015614, guid: b2011ba059e612946a46d9389f095001, type: 3}
+  parentPool: {fileID: 7421468284309576662}
+  m_PoolSize: 10
 --- !u!1 &2742733003414884234
 GameObject:
   m_ObjectHideFlags: 0

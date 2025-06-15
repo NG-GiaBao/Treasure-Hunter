@@ -16,6 +16,13 @@ MonoBehaviour:
   favoriteScenesInfos:
   - guid: 
   - guid: 3c355c6625a55cb40aaf2afa4c91c114
+  - guid: 2cda990e2423bbf4892e6590ba056729
+  - guid: ce5895a0d5dd636408bddbb7919e0109
   prefabDirectories: []
-  prefabDirectoriesInfos: []
+  prefabDirectoriesInfos:
+  - guid: 6173131e0225a364e9bc78ea977c7ba8
+  - guid: af11df85b2112d24883eb9e739035be2
+  - guid: 713bead97ce33e94597269e658a566cf
+  - guid: f5d8a0d4a51c4f64b80800c8fc2c18ec
+  - guid: 815e199e70eac0a489de7122ad61471d
   viewPoints: []

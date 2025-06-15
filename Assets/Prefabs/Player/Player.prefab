@@ -439,6 +439,7 @@ GameObject:
   - component: {fileID: 7050831308353455948}
   - component: {fileID: 1682828495642954012}
   - component: {fileID: 1690716718251704811}
+  - component: {fileID: 6380445333995375232}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -845,6 +846,18 @@ MonoBehaviour:
   m_TagCollision:
   - Trap
   - Enemy
+--- !u!114 &6380445333995375232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5625607212714015189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3540533ccf20e704581b7c4f41fe70ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6181581319267008475
 GameObject:
   m_ObjectHideFlags: 0

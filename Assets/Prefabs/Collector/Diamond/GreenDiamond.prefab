@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 6506779266743613009}
   - component: {fileID: 6405768539554412836}
   - component: {fileID: 1601702336003722465}
-  - component: {fileID: 2530437485899934818}
-  - component: {fileID: 2235163717991664881}
   - component: {fileID: 8994031544847411105}
+  - component: {fileID: 2263693566169177297}
   m_Layer: 0
   m_Name: GreenDiamond
   m_TagString: Diamond
@@ -109,39 +108,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2530437485899934818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7529813228396728589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ac04fde54e11ef49b4a639d8f5064e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_DiamondAnimator: {fileID: 0}
-  m_DiamondCollider: {fileID: 0}
---- !u!114 &2235163717991664881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7529813228396728589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99e8983be3fed0144afa4c81fa547629, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsTouchPlayer: 0
-  m_TimeDestroy: 0.5
-  m_DiamondCollider: {fileID: 0}
-  m_DiamondAnim: {fileID: 0}
-  DiamondType: 
-  m_DiamondAudioClip: {fileID: 8300000, guid: ba39bf8baf6d13046889b2d64822381a, type: 3}
-  m_CollerEffect: {fileID: 419678502511124689, guid: 185508a6459314a43bbf634d2b3143e4, type: 3}
 --- !u!61 &8994031544847411105
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -187,3 +153,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.46157074, y: 0.47446728}
   m_EdgeRadius: 0
+--- !u!114 &2263693566169177297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7529813228396728589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1298228733706694caffee60843b3acb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 6

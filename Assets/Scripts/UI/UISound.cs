@@ -12,6 +12,6 @@ public class UISound : MonoBehaviour
     
     public void PlayButtonClickSound()
     {
-        AudioManager.instance.PlaySoundEffect(m_ButtonClickSound);
+        AudioManager.Instance.PlaySoundEffect(m_ButtonClickSound);
     }
 }

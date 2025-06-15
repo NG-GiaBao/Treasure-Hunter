@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1146483144139261285}
   - component: {fileID: 5599701247796292454}
   - component: {fileID: 979737122243218051}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Water Splash2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1249383541
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: efebd1376b7b5684292b55d186f0ddb7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -106,6 +106,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &948447676234198166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1188518925811004362}
+  m_Layer: 6
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1188518925811004362
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948447676234198166}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.06, y: -1.83, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3879201115789186177}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1914919769104807709
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,9 +146,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3879201115789186177}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ship
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,13 +161,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914919769104807709}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.4311156, y: -0.12, z: -0.060214758}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3789155890371780347}
   - {fileID: 4257628188038358648}
+  - {fileID: 1188518925811004362}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2680241042940153635
@@ -150,7 +182,9 @@ GameObject:
   - component: {fileID: 3789155890371780347}
   - component: {fileID: 7511553804731616144}
   - component: {fileID: 2883914021908311288}
-  m_Layer: 0
+  - component: {fileID: 5155489783518642014}
+  - component: {fileID: 2723295126161921777}
+  m_Layer: 6
   m_Name: Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 2680241042940153635}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.74, y: -1.42, z: -0.08290457}
+  m_LocalPosition: {x: -5, y: -1.42, z: -0.08290457}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -215,7 +249,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1249383541
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4a3556837953d1943b8acea2f2039a05, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -249,6 +283,64 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &5155489783518642014
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2680241042940153635}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.05, y: 0.07}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.6666666, y: 0.5416667}
+    newSize: {x: 0.8, y: 0.26}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.43, y: 0.28}
+  m_EdgeRadius: 0
+--- !u!114 &2723295126161921777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2680241042940153635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 286c8752c31b9e440930fc3061be4a35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPos: {fileID: 1188518925811004362}
 --- !u!1 &3267982526162715037
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +352,7 @@ GameObject:
   - component: {fileID: 2603205147285179529}
   - component: {fileID: 9036010866554993178}
   - component: {fileID: 4042528785250939789}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +413,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1249383541
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3787136892f6cdf43bfc5fb9de8a16be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -366,7 +458,7 @@ GameObject:
   - component: {fileID: 857696451675528330}
   - component: {fileID: 752854043861047945}
   - component: {fileID: 3344832354807918021}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Water Splash1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +519,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1249383541
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 239972468c488db4d981dddc35aab007, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -471,7 +563,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2382969083639664482}
   - component: {fileID: 8897825303841682077}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Anchor2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +624,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1249383541
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: b835c992f355a8048bdb7087bffab967, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -555,7 +647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4826523436472966901}
   - component: {fileID: 7650250795525286049}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Anchor1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +709,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1249383541
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 6bc4cd341d2e4ac448deffcc5cf00f7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -678,9 +770,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5967963333187754519, guid: d8db70ed13c47a8418eb2edd8bac2ce3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5999802772408490337, guid: d8db70ed13c47a8418eb2edd8bac2ce3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7336108533629340113, guid: d8db70ed13c47a8418eb2edd8bac2ce3, type: 3}
       propertyPath: m_Name
       value: Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 7336108533629340113, guid: d8db70ed13c47a8418eb2edd8bac2ce3, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

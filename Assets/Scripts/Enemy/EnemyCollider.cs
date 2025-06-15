@@ -55,7 +55,7 @@ public class EnemyCollider : MonoBehaviour
             if (collider2D != null)
             {
                 GameManager.Instance.ReceriverDamge(enemyDamage.GetEnemyDamage());
-                BloodVFx bloodVFx = collider2D.GetComponent<BloodVFx>();
+                BloodVfx bloodVFx = collider2D.GetComponent<BloodVfx>();
                 Animator animator = collider2D.GetComponent<Animator>();
                 if (animator != null && bloodVFx != null)
                 {
@@ -69,7 +69,7 @@ public class EnemyCollider : MonoBehaviour
     }
     private void PlaySoundFxPlayerHit()
     {
-        AudioManager.instance.PlaySoundEffect(m_HitPlayerAudioClip);
+        AudioManager.Instance.PlaySoundEffect(m_HitPlayerAudioClip);
     }
     private void OnDrawGizmosSelected()
     {

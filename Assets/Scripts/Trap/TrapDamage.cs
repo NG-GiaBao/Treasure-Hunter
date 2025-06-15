@@ -10,6 +10,10 @@ public class TrapDamage : MonoBehaviour
     [SerializeField] private Rigidbody2D m_playerRb;
     [SerializeField] private Vector2 m_Force = new(2f, 2f);
 
+    private void Awake()
+    {
+        m_playerRb = GetComponent<Rigidbody2D>();
+    }
     public int GetTrapDamage() => m_TrapDamage;
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -18,7 +22,7 @@ public class TrapDamage : MonoBehaviour
             || collision.gameObject.CompareTag("Tree"))
         {
             NewPlayerHeal playerHeal = collision.gameObject.GetComponent<NewPlayerHeal>();
-            BloodVFx bloodVFx = collision.gameObject.GetComponent<BloodVFx>();
+            BloodVfx bloodVFx = collision.gameObject.GetComponent<BloodVfx>();
             Animator animator = collision.gameObject.GetComponent<Animator>();
             if (playerHeal != null && bloodVFx != null && animator != null)
             {
@@ -33,7 +37,7 @@ public class TrapDamage : MonoBehaviour
     }
     private void PlaySoundFxPlayerHit()
     {
-        AudioManager.instance.PlaySoundEffect(m_HitPlayerAudioClip);
+        AudioManager.Instance.PlaySoundEffect(m_HitPlayerAudioClip);        
     }
 
     private void CheckNameTrap()

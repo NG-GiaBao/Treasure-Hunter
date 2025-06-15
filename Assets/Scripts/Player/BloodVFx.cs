@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BloodVFx : MonoBehaviour
+public class BloodVfx : MonoBehaviour
 {
     [SerializeField] private GameObject m_BloodVFX;
     // Start is called before the first frame update

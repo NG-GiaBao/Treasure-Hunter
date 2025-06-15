@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1923753293
-  m_SortingLayer: 5
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: be79b64b43cf1514b81bc03b3dbf6ab2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -162,4 +162,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BulletDmg: 1
+  m_BulletSpeed: 10
+  m_RigidBody2d: {fileID: 0}
+  m_TrapController: {fileID: 0}
+  m_TagCollision: []
   m_HitPlayerAudioClip: {fileID: 8300000, guid: 00d6e62a5e5e937408cae728d0c88123, type: 3}

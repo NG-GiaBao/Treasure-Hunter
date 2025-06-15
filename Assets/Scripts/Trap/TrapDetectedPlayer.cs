@@ -31,16 +31,6 @@ public class TrapDetectedPlayer : MonoBehaviour
         DetectPlayers();
         DistanceFlip();
     }
-    //private void Start()
-    //{
-    //    PlayerPosition.OnPlayerPosition += DetectPlayers;
-    //    PlayerPosition.OnPlayerPosition += DistanceFlip;
-    //}
-    //private void OnDestroy()
-    //{
-    //    PlayerPosition.OnPlayerPosition -= DetectPlayers;
-    //    PlayerPosition.OnPlayerPosition -= DistanceFlip;
-    //}
     protected virtual void DetectPlayers()
     {
         if(NewPlayerManager.Instance.m_NewPlayerHeal.GetIsPlayerDeath()) return;

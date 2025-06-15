@@ -50,7 +50,7 @@ public class BoxHandler : MonoBehaviour
                 {
                     diamondName = diamondName.Replace("(Clone)", "");
                 }
-                diamond.GetComponent<DiamondCollider>().DiamondType = diamondName;
+                //diamond.GetComponent<DiamondCollider>().DiamondType = diamondName;
             }
         }
     }

@@ -2,32 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrapShoot : MonoBehaviour
+public class TrapShoot : BaseTrapShoot
 {
-    [SerializeField] public GameObject m_BulletPrehap;
-    
-    [SerializeField] public Transform m_SpawnPoint;
-    [SerializeField] public float m_TimeDestroyBullet;
-    [SerializeField] private BulletPool m_BulletPool;
-
-    [Header("SoundFX")]
-    [SerializeField] private AudioClip m_ShootAudioClip;
-
+    [SerializeField] private TrapController trapController;
     private void Awake()
     {
         m_BulletPool = GetComponent<BulletPool>();
+        trapController=GetComponent<TrapController>();
     }
-    public virtual void ShootingBullet()
+    
+    public override void ShootingBullet()
     {
-        if (m_BulletPrehap != null && m_SpawnPoint != null)
+        if (m_SpawnPoint != null)
         {
+            GameObject bullet = m_BulletPool.GetBullet();
+            bullet.transform.SetParent(null, true);
+            bullet.transform.position = m_SpawnPoint.position;
 
-            GameObject pearl = m_BulletPool.GetBullet();
-            Destroy(pearl, m_TimeDestroyBullet);
+            if (bullet != null)
+            {
+                if (bullet.TryGetComponent<BulletController>(out var bulletController))
+                {
+                    bulletController.BulletVelocity(trapController.m_TrapFlip.GetDirectionRight());
+                    StartCoroutine(TimeReturnPool(bullet));
+                }
+            }
         }
     }
-    public void PlaySoundFXShootPearl()
+    
+
+    public override void PlaySoundFXShoot()
     {
-        AudioManager.instance.PlaySoundEffect(m_ShootAudioClip);
+        if (AudioManager.HasInstance)
+        {
+            AudioManager.Instance.PlaySE("TrapAttack");
+        }
+    }
+    
+    IEnumerator TimeReturnPool(GameObject bullet)
+    {
+        yield return new WaitForSeconds(m_TimeDestroyBullet);
+        if (m_BulletPool != null)
+        {
+            m_BulletPool.ReturnPool(bullet);
+        }
     }
 }

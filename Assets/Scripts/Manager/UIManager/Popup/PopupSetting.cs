@@ -33,6 +33,7 @@ public class PopupSetting : BasePopup
         if(AudioManager.HasInstance)
         {
             SetToggleAndSlider(isOn,true, musicSlider);
+            AudioManager.Instance.PlaySE("ClickButton");
         }
     }
     private void OnClickSoundToggle(bool isOn)
@@ -40,6 +41,7 @@ public class PopupSetting : BasePopup
         if (AudioManager.HasInstance)
         {
             SetToggleAndSlider(isOn,false, soundSlider);
+            AudioManager.Instance.PlaySE("ClickButton");
         }
     }
     private void OnClickSoundSlider(float value)
@@ -74,6 +76,10 @@ public class PopupSetting : BasePopup
     }
     private void OnExitButtonClick()
     {
+        if (AudioManager.HasInstance)
+        {
+            AudioManager.Instance.PlaySE("ExitButton");
+        }
         this.Hide();
     }   
     private void SetToggleAndSlider(bool isShow ,bool IsBGM,Slider slider)

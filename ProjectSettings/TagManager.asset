@@ -13,6 +13,7 @@ TagManager:
   - AirTrap
   - Box
   - Coin
+  - Minimap
   layers:
   - Default
   - TransparentFX

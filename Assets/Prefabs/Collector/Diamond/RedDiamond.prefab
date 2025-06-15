@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 585329698755467305}
   - component: {fileID: 6930730157374369463}
   - component: {fileID: 8942847497968312529}
-  - component: {fileID: 2546839927267864377}
   - component: {fileID: 4913290391772770564}
+  - component: {fileID: 1271231033305398350}
   m_Layer: 0
   m_Name: RedDiamond
   m_TagString: Diamond
@@ -123,25 +123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DiamondAnimator: {fileID: 0}
   m_DiamondCollider: {fileID: 0}
---- !u!114 &2546839927267864377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7734825882607997048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99e8983be3fed0144afa4c81fa547629, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsTouchPlayer: 0
-  m_TimeDestroy: 0.5
-  m_DiamondCollider: {fileID: 0}
-  m_DiamondAnim: {fileID: 0}
-  DiamondType: 
-  m_DiamondAudioClip: {fileID: 8300000, guid: ba39bf8baf6d13046889b2d64822381a, type: 3}
-  m_CollerEffect: {fileID: 419678502511124689, guid: 185508a6459314a43bbf634d2b3143e4, type: 3}
 --- !u!61 &4913290391772770564
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -187,3 +168,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4970379, y: 0.51315784}
   m_EdgeRadius: 0
+--- !u!114 &1271231033305398350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7734825882607997048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1298228733706694caffee60843b3acb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 7

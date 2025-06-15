@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 8522406503951711953}
   - component: {fileID: 5010418053065473273}
   - component: {fileID: 4736901345915540834}
+  - component: {fileID: 7374503122311086694}
   m_Layer: 10
   m_Name: TotemsHead3
   m_TagString: Trap
@@ -339,6 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 0}
+  speedAnim: 0
 --- !u!114 &7413535815985253413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,6 +373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TrapHealSO: {fileID: 11400000, guid: 89887161b3d039142bbf4bbe40e2775d, type: 2}
   m_TrapHeal: 0
+  m_TrapController: {fileID: 0}
 --- !u!114 &4362837260604933135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,12 +386,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5047b7b091770449f9a1507688bc6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BulletPrehap: {fileID: 881737673336137966, guid: 23dc359ff7d7f1046a3475857a3910eb, type: 3}
-  m_BulletSpeed: -10
   m_SpawnPoint: {fileID: 3436012645548471437}
   m_TimeDestroyBullet: 2
-  m_ShootAudioClip: {fileID: 0}
-  m_ShootTotemAudioClip: {fileID: 8300000, guid: 26463d737a658c645b2f74dd1709592d, type: 3}
+  m_SpeedShoot: 0
+  m_BulletPool: {fileID: 0}
 --- !u!61 &72093797860170199
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -526,6 +527,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrapAnim: {fileID: 0}
+  m_TrapDetectedPlayer: {fileID: 0}
+  m_TrapFlip: {fileID: 0}
+  m_TrapHeal: {fileID: 0}
+  m_Destroyed: {fileID: 0}
+--- !u!114 &7374503122311086694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2944992755666461530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e227f52515e8e4e4fa40915ce7a9a58d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BulletPrefabs: {fileID: 881737673336137966, guid: 23dc359ff7d7f1046a3475857a3910eb, type: 3}
+  parentPool: {fileID: 3132605079798634175}
+  m_PoolSize: 10
 --- !u!1 &4524297341473758377
 GameObject:
   m_ObjectHideFlags: 0

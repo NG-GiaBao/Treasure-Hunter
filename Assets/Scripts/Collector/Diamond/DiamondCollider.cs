@@ -9,14 +9,14 @@ public class DiamondCollider : MonoBehaviour
     [SerializeField] private float m_TimeDestroy;
     [SerializeField] private Collider2D m_DiamondCollider;
     [SerializeField] private DiamondAnim m_DiamondAnim;
-    [SerializeField] public string DiamondType;
+    [SerializeField] public ItemType itemType;
     [SerializeField] private AudioClip m_DiamondAudioClip;
 
     [SerializeField] private ParticleSystem m_CollerEffect;
     [SerializeField] private int m_Amount = 1;
     
 
-    public static Action<string,int> OnDiamondCollected; // Event với tên kim cương
+    public static Action<ItemType,int> OnDiamondCollected; // Event với tên kim cương
 
 
     private void Awake()
@@ -30,7 +30,7 @@ public class DiamondCollider : MonoBehaviour
         {
             m_IsTouchPlayer = true;
             m_DiamondAnim.SetChangeAnimDiamond();
-            OnDiamondCollected?.Invoke(DiamondType , m_Amount);
+            OnDiamondCollected?.Invoke(itemType , m_Amount);
             DiamondAudioClip();
             ActiveEffect();
             StartCoroutine(SetTimeDestroyDiamond());

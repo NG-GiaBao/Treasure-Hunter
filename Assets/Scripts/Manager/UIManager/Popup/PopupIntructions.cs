@@ -11,10 +11,15 @@ public class PopupIntructions : BasePopup
         if (exitButton != null)
         {
             exitButton.onClick.AddListener(OnExitButtonClick);
+            
         }
     }
     private void OnExitButtonClick()
     {
+        if (AudioManager.HasInstance)
+        {
+            AudioManager.Instance.PlaySE("ExitButton");
+        }
         this.Hide();
     }
 }

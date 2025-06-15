@@ -8,8 +8,7 @@ public class Destroyed : MonoBehaviour
     public float explosionForce = 300f; // Lực nổ
     public List<int> usedIndices = new(); // Danh sách theo dõi các chỉ số đã chọn
     [SerializeField] private AudioClip m_ShatterAudioClip;
-
-   
+    
     public void DestroyTrap()
     {
         PlayShatterAudioClip();
@@ -54,6 +53,6 @@ public class Destroyed : MonoBehaviour
 
     private void PlayShatterAudioClip()
     {
-        AudioManager.instance.PlaySoundEffect(m_ShatterAudioClip);
+        AudioManager.Instance.PlaySoundEffect(m_ShatterAudioClip);
     }
 }

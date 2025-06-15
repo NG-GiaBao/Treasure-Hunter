@@ -14,10 +14,11 @@ public class NewPlayerAttack : MonoBehaviour
 
     [Header("Animation")]
     [SerializeField] private string[] m_AttackAnimations; // Tên các clip tấn công
-
+    [Header("Atribute Attack")]
     [SerializeField] private int m_CurrentAttackIndex = 0; // Chỉ số của animation hiện tại
-
     [SerializeField] private float m_TimeDelay;
+    [SerializeField] private float timeDelayAttack = 0.6f; // Thời gian delay giữa các đợt tấn công
+
 
     public event Action<string[], int> OnArrayStringAttackAnimation;
     void Start()
@@ -47,7 +48,12 @@ public class NewPlayerAttack : MonoBehaviour
                 NewPlayerManager.Instance.m_NewPlayerAnimation.PlayAirAnimation();
             }
         }
-        m_CurrentAttackIndex = (m_CurrentAttackIndex + 1) % m_AttackAnimations.Length;
+        AnimatorStateInfo stateInfo = NewPlayerManager.Instance.m_NewPlayerAnimation.GetAnimator().GetCurrentAnimatorStateInfo(0);
+        //if(stateInfo.IsName("Attack") && stateInfo.normalizedTime > timeDelayAttack)
+        
+            m_CurrentAttackIndex = (m_CurrentAttackIndex + 1) % m_AttackAnimations.Length;
+        
+        
     }
     private void OnAttackCanceled(InputAction.CallbackContext context)
     {

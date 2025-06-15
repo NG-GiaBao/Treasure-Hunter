@@ -20,7 +20,7 @@ public class NewPlayerManager : BaseManager<NewPlayerManager>
     public NewPlayerJump m_NewPlayerJump;
     public NewPlayerAttack m_NewPlayerAttack;
     public NewPlayerSoundFX m_NewPlayerSoundFX;
-    public BloodVFx m_BloodVFx;
+    public BloodVfx m_BloodVFx;
     public NewPLayerDeath m_NewPLayerDeath;
     public NewPlayerHeal m_NewPlayerHeal;
 
@@ -38,7 +38,7 @@ public class NewPlayerManager : BaseManager<NewPlayerManager>
         m_NewPlayerJump = GetComponent<NewPlayerJump>();
         m_NewPlayerAttack = GetComponent<NewPlayerAttack>();
         m_NewPlayerSoundFX = GetComponent<NewPlayerSoundFX>();
-        m_BloodVFx = GetComponent<BloodVFx>();
+        m_BloodVFx = GetComponent<BloodVfx>();
         m_NewPLayerDeath = GetComponent<NewPLayerDeath>();
         m_NewPlayerHeal = GetComponent<NewPlayerHeal>();
     }

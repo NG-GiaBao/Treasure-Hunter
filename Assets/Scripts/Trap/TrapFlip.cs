@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
 
 public class TrapFlip : MonoBehaviour
 {
@@ -13,6 +12,7 @@ public class TrapFlip : MonoBehaviour
     private void Start()
     {
         m_Controller.m_TrapDetectedPlayer.OnValueFlipDirection += Flip;
+       
     }
     private void OnDestroy()
     {
@@ -28,11 +28,13 @@ public class TrapFlip : MonoBehaviour
         {
             this.transform.localScale = new Vector3(1f, transform.localScale.y, transform.localScale.z);
             m_IsDirectionRight = false;
+           
         }
         else if (valueFlip > 0)
         {
             this.transform.localScale = new Vector3(-1f, transform.localScale.y, transform.localScale.z);
             m_IsDirectionRight = true;
+           
         }
     }
     public bool GetDirectionRight()

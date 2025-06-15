@@ -335,6 +335,7 @@ GameObject:
   - component: {fileID: 1130832330446522844}
   - component: {fileID: 6261818971237166555}
   - component: {fileID: 3288217418512274499}
+  - component: {fileID: 4005746546792909977}
   m_Layer: 12
   m_Name: TotemsHead2
   m_TagString: Trap
@@ -517,12 +518,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5047b7b091770449f9a1507688bc6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BulletPrehap: {fileID: 881737673336137966, guid: 23dc359ff7d7f1046a3475857a3910eb, type: 3}
-  m_BulletSpeed: 10
   m_SpawnPoint: {fileID: 6185063832026735055}
   m_TimeDestroyBullet: 2
-  m_ShootAudioClip: {fileID: 0}
-  m_ShootTotemAudioClip: {fileID: 8300000, guid: 26463d737a658c645b2f74dd1709592d, type: 3}
+  m_SpeedShoot: 0
+  m_BulletPool: {fileID: 0}
 --- !u!114 &3549603443065732189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,6 +575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TrapHealSO: {fileID: 11400000, guid: de9b27e90a014ad4db9f81008e93357f, type: 2}
   m_TrapHeal: 0
+  m_TrapController: {fileID: 0}
 --- !u!114 &3072072951681515224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -589,6 +589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 0}
+  speedAnim: 0
 --- !u!114 &6823004086006512905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,6 +662,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrapAnim: {fileID: 0}
+  m_TrapDetectedPlayer: {fileID: 0}
+  m_TrapFlip: {fileID: 0}
+  m_TrapHeal: {fileID: 0}
+  m_Destroyed: {fileID: 0}
+--- !u!114 &4005746546792909977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4492484964468588117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e227f52515e8e4e4fa40915ce7a9a58d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BulletPrefabs: {fileID: 881737673336137966, guid: 23dc359ff7d7f1046a3475857a3910eb, type: 3}
+  parentPool: {fileID: 5222993587042344561}
+  m_PoolSize: 10
 --- !u!1 &4935226484828319038
 GameObject:
   m_ObjectHideFlags: 0

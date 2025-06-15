@@ -26,11 +26,14 @@ public class NotifyFakeLoading : BaseNotify
             progressTxt.text = $"LOADING...{Mathf.RoundToInt(progressSlider.value * 100)}%";
         }).OnComplete(() =>
         {
-            if(AudioManager.HasInstance)
+            if (AudioManager.HasInstance)
             {
-                AudioManager.Instance.MenuGameMusic();
+                AudioManager.Instance.PlayBGM("Cute Village Loop");
             }
-           
+            if (GameManager.HasInstance)
+            {
+                GameManager.Instance.SetStateGame(GameState.StartGame);
+            }
             HideCanvasGroup();
         });
     }    

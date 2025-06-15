@@ -808,6 +808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healBarSlider: {fileID: 4005591388296252063}
   goldTxt: {fileID: 328299662544312699}
+  coinRect: {fileID: 2050789465732228594}
 --- !u!1 &7152592246365588382
 GameObject:
   m_ObjectHideFlags: 0

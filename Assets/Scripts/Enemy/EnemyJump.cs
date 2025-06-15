@@ -11,21 +11,23 @@ public class EnemyJump : MonoBehaviour
     [SerializeField] private float m_EnemyJumpSpeed;
     [SerializeField] private bool m_IsJump;
     [SerializeField] private bool m_IsGrounded;
+    [SerializeField] private EnemyController EnemyController;
 
     public static event Action<bool,GameObject> OnJump;
     private void Awake()
     {
         m_EnemyRb = GetComponent<Rigidbody2D>();
+        EnemyController = GetComponent<EnemyController>();
     }
-    // Start is called before the first frame update
+   
     void Start()
     {
-        EnemyDetectedPlayer.OnIsDetectedPlayer += Jump;
+        EnemyController.m_EnemyDetectedPlayer.OnIsDetectedPlayer += Jump;
         EnemyCollider.OnIsGround += CheckIsGrounded;
     }
     private void OnDestroy()
     {
-        EnemyDetectedPlayer.OnIsDetectedPlayer -= Jump;
+        EnemyController.m_EnemyDetectedPlayer.OnIsDetectedPlayer -= Jump;
         EnemyCollider.OnIsGround -= CheckIsGrounded;
     }
 
