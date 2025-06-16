@@ -16,8 +16,7 @@ public class BoxKey : MonoBehaviour
     public void ActivePadlock()
     {
         GameObject padlock = Instantiate(Padlock, m_PositionPadlock.position, Quaternion.identity);
-        Rigidbody2D rigidbody2D = padlock.GetComponent<Rigidbody2D>();
-        if (rigidbody2D != null)
+        if (padlock.TryGetComponent<Rigidbody2D>(out var rigidbody2D))
         {
             rigidbody2D.velocity = new Vector2(m_PlayerPos.transform.localScale.x * m_force, m_PlayerPos.transform.localScale.y * m_force);
         }

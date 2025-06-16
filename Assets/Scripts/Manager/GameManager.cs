@@ -3,6 +3,7 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public enum GameState
@@ -26,56 +27,19 @@ public class GameManager : BaseManager<GameManager>
     [Header("Player Heal")]
     [SerializeField] private PlayerStatSO playerStatSO;
     [SerializeField] private int playerHeal;
+    [SerializeField] private InputAction pressesButton;
     public bool m_IsPlayerDeath;
     public GameState gameState;
     public GameMap gameMap;
     public bool m_IsBossActive = true;
 
-    [Header("Value Item")]
-    [ShowInInspector]
-    private readonly Dictionary<ItemType, int> ItemValue = new();
-
-
     private void Start()
     {
-        InitDict();
+      
         SetStateGame(GameState.MenuGame);
         StartGame();
     }
-    private void InitDict()
-    {
-        ItemValue.Add(ItemType.Coin, 0);
-        ItemValue.Add(ItemType.GreenDiamond, 0);
-        ItemValue.Add(ItemType.RedDiamond, 0);
-        ItemValue.Add(ItemType.BlueDiamond, 0);
-    }
-    public void AddItemValue(ItemType itemType,int amout = 1)
-    {
-        if (ItemValue.ContainsKey(itemType))
-        {
-            ItemValue[itemType] += amout;
-            if(ListenerManager.HasInstance)
-            {
-                ListenerManager.Instance.BroadCast(ListenType.OnSendItemValue, (itemType, ItemValue[itemType]));
-            }
-        }
-        else
-        {
-            Debug.LogError($"ItemType {itemType} not found in ItemValue dictionary.");
-        }
-    }
-    public int GetItemValue(ItemType itemType)
-    {
-        if (ItemValue.ContainsKey(itemType))
-        {
-            return ItemValue[itemType];
-        }
-        else
-        {
-            Debug.LogError($"ItemType {itemType} not found in ItemValue dictionary.");
-            return 0;
-        }
-    }
+   
     private void StartGame()
     {
         if (UIManager.HasInstance)
@@ -83,7 +47,22 @@ public class GameManager : BaseManager<GameManager>
             UIManager.Instance.ShowScreen<ScreenMenuOpening>();
             UIManager.Instance.ShowNotify<NotifyFakeLoading>();
         }
-        
+        pressesButton.Enable();
+        pressesButton.performed += OnPressesButton;
+
+
+    }
+    private void OnDestroy()
+    {
+        pressesButton.performed -= OnPressesButton;
+        pressesButton.Disable();
+    }
+    private void OnPressesButton(InputAction.CallbackContext context)
+    {
+       if(UIManager.HasInstance)
+        {
+            UIManager.Instance.ShowPopup<PopupPauseGame>();
+        }
     }
     public void LoadScene(string nameScene)
     {

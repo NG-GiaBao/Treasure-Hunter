@@ -185,11 +185,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   redDiamond: {fileID: 7354346988663998998}
-  redDiamondRect: {fileID: 3519928633537298970}
+  redDiamondRect: {fileID: 7091220043784858829}
   blueDiamond: {fileID: 4444705989349189855}
   blueDiamondRect: {fileID: 7885248363799529564}
   greenDiamond: {fileID: 4635838002757569089}
-  greenDiamondRect: {fileID: 108643699210354713}
+  greenDiamondRect: {fileID: 7195688992455690196}
 --- !u!1 &723594003859646482
 GameObject:
   m_ObjectHideFlags: 0

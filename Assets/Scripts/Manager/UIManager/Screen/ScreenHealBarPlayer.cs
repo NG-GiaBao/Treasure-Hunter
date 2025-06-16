@@ -20,7 +20,7 @@ public class ScreenHealBarPlayer : BaseScreen
         }
         if (GameManager.HasInstance)
         {
-            int coin = GameManager.Instance.GetItemValue(ItemType.Coin);
+            int coin = QuestManager.Instance.GetItemValue(ItemType.Coin);
             goldTxt.text = $"x {coin}";
         }
 
@@ -45,7 +45,17 @@ public class ScreenHealBarPlayer : BaseScreen
     {
         if (value is (ItemType itemType, int amount) && itemType == ItemType.Coin)
         {
-            goldTxt.text = $"x {amount}";
+            switch (itemType)
+            {
+                case ItemType.Coin:
+                    UpdateCoin(amount);
+                    break;
+            }
+           
         }
+    }
+    private void UpdateCoin(int amount)
+    {
+        goldTxt.text = $"x {amount}";
     }
 }

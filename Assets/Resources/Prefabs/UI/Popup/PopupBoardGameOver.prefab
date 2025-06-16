@@ -121,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4706320198081949171}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BoardGameOver, Assembly-CSharp
         m_MethodName: RestartOnClick
         m_Mode: 1
@@ -617,7 +617,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4706320198081949171}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BoardGameOver, Assembly-CSharp
         m_MethodName: BackToMenuOnClick
         m_Mode: 1
@@ -738,7 +738,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 290, y: 435}
+  m_AnchoredPosition: {x: 453, y: 435}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &8162746424066559649
@@ -832,7 +832,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -0.7691107, w: 0}
+  m_margin: {x: 199.02112, y: 452.904, z: 530.65985, w: 449.84363}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -930,10 +930,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.42
+  m_fontSize: 72
   m_fontSizeBase: 53.42
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -966,7 +966,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -1.6485462, y: -0.778841, z: -2.5344827, w: 0}
+  m_margin: {x: 222.31111, y: 294.05423, z: 210.08563, w: 306.1725}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -983,7 +983,6 @@ GameObject:
   - component: {fileID: 5632000730275443580}
   - component: {fileID: 5935193569705324302}
   - component: {fileID: 162317368519093486}
-  - component: {fileID: 4706320198081949171}
   m_Layer: 5
   m_Name: UIBoardGameOver_Panel
   m_TagString: Untagged
@@ -1054,22 +1053,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4706320198081949171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7288000746694544976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 470fc9049a9079f43b529769bee96a9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LoadMenuTransitionSettings: {fileID: 11400000, guid: b577ec7af0d48c34a9d31ce17f830a8d, type: 2}
-  CurrentSceneTransitionSettings: {fileID: 11400000, guid: 057babd6f13132c449650d99e3c4e99c, type: 2}
-  menuNameScene: UIStartGame
-  timeDelay: 0
 --- !u!1 &8285012964527691336
 GameObject:
   m_ObjectHideFlags: 0

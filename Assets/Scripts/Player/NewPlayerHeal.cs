@@ -25,6 +25,10 @@ public class NewPlayerHeal : MonoBehaviour
         if (m_PlayerHeal <= 0)
         {
             m_IsplayerDeath = true;
+            if(UIManager.HasInstance)
+            {
+                UIManager.Instance.ShowPopup<PopupBoardGameOver>();
+            }    
         }
         else
         {
